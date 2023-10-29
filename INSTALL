@@ -2,4 +2,10 @@
 
 cp cmdlatex.sh ~/.local/bin/cmdlatex
 mkdir -p ~/.config/cmdlatex
-touch ~/.config/cmdlatex/config.tex
+echo "\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{newpxtext}
+\usepackage{mathpartir}
+\usepackage{stmaryrd}
+\usepackage{varwidth}" > ~/.config/cmdlatex/config.tex

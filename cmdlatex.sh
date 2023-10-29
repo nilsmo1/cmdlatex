@@ -43,13 +43,13 @@ usage() {
     printf "  -c <path>\tUse custom path for preamble, instead of default $config_path.\n"
     printf "  -v\t\tShow the version of installed instance of $program.\n"
     printf "  -h\t\tPrints this help.\n"
-    printf "  -V\t\tShow verbose output.\n"
+    printf "  -q\t\tDo not show verbose output.\n"
     printf "  -K\t\tKeep the png file after program termination.\n"
     printf "  -k\t\tKeep the tex file after program termination.\n"
     printf "  -d\t\tDo not display the png after creation.\n"
 }
 
-while getopts ":e:E:f:c:vVkKdh" option; do
+while getopts ":e:E:f:c:vqkKdh" option; do
     case $option in
         e) input=$OPTARG; expression=true ;;
         E) editor=$OPTARG ;;
@@ -85,14 +85,7 @@ if [ -z "$input" ]; then
 fi
 
 echo "\documentclass[border=2pt]{standalone}
-\usepackage{amsmath}
-\usepackage{amsfonts}
-\usepackage{amssymb}
 \usepackage{$font}
-\usepackage{newpxtext}
-\usepackage{mathpartir}
-\usepackage{stmaryrd}
-\usepackage{varwidth}
 \input{$config_path}
 \begin{document}
 \begin{varwidth}{\linewidth}
