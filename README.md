@@ -25,6 +25,7 @@ Either just run
 cmdlatex [-optional flags] -e '<latex expression>'
 ```
 > If the `-e` flag is used, make sure to surround the expression with single quotes.
+
 Or
 ```bash
 cmdlatex [-optional flags]
