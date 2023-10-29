@@ -2,7 +2,7 @@
 Convert LaTeX input into a png, which is copied to the clipboard.
 
 ## Requirements
-This script uses `pdflatex`, `convert`, `xclip` and `feh`. Make sure that these programs are already installed for the execution of the script.
+This script uses `pdflatex`, `convert`, `xclip` and `feh`. Make sure that these programs are already installed for the correct execution of the script.
 
 ## Getting started
 To get things running, clone the repository either with HTTPS or SSH; or download a zip file of the repository:
@@ -23,7 +23,7 @@ This will copy the executable `cmdlatex.sh` to `~/.local/bin/cmdlatex` and the d
 > Make sure that your `$PATH` variable includes `~/.local/bin/` for this to work.
 
 ## Usage
-Either just run
+Either run
 ```bash
 cmdlatex [-optional flags] -e '<latex expression>'
 ```
@@ -33,7 +33,6 @@ Or
 ```bash
 cmdlatex [-optional flags]
 ```
-to run the program.
 
 ## Additional help
 For additional information about the different flags that this program supports, run `cmdlatex -h`.
