@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+cp cmdlatex.sh ~/.local/bin/cmdlatex
