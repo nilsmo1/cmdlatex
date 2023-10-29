@@ -21,7 +21,7 @@ From here, go to the newly downloaded or cloned instance of the repository and r
 cd cmdlatex
 ./INSTALL
 ```
-This will copy the executable `cmdlatex.sh` to `~/.local/bin/cmdlatex` and the default config file will be created under `~/.config/cmdlatex/config.tex`.
+This will copy the executable `cmdlatex.sh` to `~/.local/bin/` as `cmdlatex` and the default config file will be created under `~/.config/cmdlatex/config.tex`.
 > Make sure that your `$PATH` variable includes `~/.local/bin/` for this to work.
 
 ## Usage
