@@ -1,11 +1,16 @@
 #!/usr/bin/env bash
 
+CONFIG_PATH=~/.config/cmdlatex/config.tex
+
 cp cmdlatex.sh ~/.local/bin/cmdlatex
 mkdir -p ~/.config/cmdlatex
-echo "\usepackage{amsmath}
-\usepackage{amsfonts}
-\usepackage{amssymb}
-\usepackage{newpxtext}
-\usepackage{mathpartir}
-\usepackage{stmaryrd}
-\usepackage{varwidth}" > ~/.config/cmdlatex/config.tex
+
+if ! test $CONFIG_PATH; then
+    echo "\usepackage{amsmath}
+    \usepackage{amsfonts}
+    \usepackage{amssymb}
+    \usepackage{newpxtext}
+    \usepackage{mathpartir}
+    \usepackage{stmaryrd}
+    \usepackage{varwidth}" > $CONFIG_PATH
+fi
