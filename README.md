@@ -7,10 +7,12 @@ This script uses `pdflatex`, `convert`, `xclip` and `feh`. Make sure that these 
 ## Getting started
 To get things running, clone the repository either with HTTPS or SSH; or download a zip file of the repository:
 ### HTTPS
+
     ```bash
     git clone https://github.com/nilsmo1/cmdlatex.git
     ```
 ### SSH
+
     ```bash
     git clone git@github.com:nilsmo1/cmdlatex.git
     ```
