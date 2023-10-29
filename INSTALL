@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
 
 cp cmdlatex.sh ~/.local/bin/cmdlatex
+mkdir -p ~/.config/cmdlatex
+touch ~/.config/cmdlatex/config.tex

@@ -2,12 +2,14 @@
 
 program="cmdlatex"
 version="1.0.0"
-verbose=false
+verbose=true
 keep_tex=false
 keep_png=false
 editor=$EDITOR
 expression=false
 display=true
+font="euler"
+config_path='~/.config/cmdlatex/config.tex'
 
 base='_latex_cmd_tmp_file_'
 input_file=$base'input_.tex'
@@ -31,12 +33,14 @@ clean() {
 }
 
 usage() {
-    echo "Create a png from an input LaTeX expression and copy it to clipboard."
-    printf "Usage: $program [-v | h | VKkd][-e \'<expression>\' | -E <editor>]\n"
+    printf "Create a png from an input LaTeX expression and copy it to clipboard.\n\n"
+    printf "Usage: $program [-v | h | qKkd][-e \'<expression>\' | -E <editor>][-f <font>][-c <config_file_path>]\n"
     printf "Options:\n"
     printf "  -e '<expr>'\tCompile given LaTeX expression without going into an editor.\n"
     printf "\t\t(has to be enclosed in single quotes)\n"
     printf "  -E <editor>\tUse given editor.\n"
+    printf "  -f <font>\tUse given font.\n"
+    printf "  -c <path>\tUse custom path for preamble, instead of default $config_path.\n"
     printf "  -v\t\tShow the version of installed instance of $program.\n"
     printf "  -h\t\tPrints this help.\n"
     printf "  -V\t\tShow verbose output.\n"
@@ -45,12 +49,14 @@ usage() {
     printf "  -d\t\tDo not display the png after creation.\n"
 }
 
-while getopts ":e:E:vVkKdh" option; do
+while getopts ":e:E:f:c:vVkKdh" option; do
     case $option in
         e) input=$OPTARG; expression=true ;;
         E) editor=$OPTARG ;;
+        f) font=$OPTARG ;;
+        c) config_path=$OPTARG ;;
         v) echo "$program version $version"; exit 0 ;;
-        V) verbose=true ;;
+        q) verbose=false ;;
         k) keep_tex=true ;;
         K) keep_png=true ;;
         d) display=false ;;
@@ -82,11 +88,12 @@ echo "\documentclass[border=2pt]{standalone}
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
-\usepackage{euler}
+\usepackage{$font}
 \usepackage{newpxtext}
 \usepackage{mathpartir}
 \usepackage{stmaryrd}
 \usepackage{varwidth}
+\input{$config_path}
 \begin{document}
 \begin{varwidth}{\linewidth}
 $input
