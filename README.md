@@ -1,6 +1,9 @@
 # cmdlatex
 Convert LaTeX input into a png, which is copied to the clipboard.
 
+## Requirements
+This script uses `pdflatex`, `convert`, `xclip` and `feh`. Make sure that these programs are already installed for the execution of the script.
+
 ## Getting started
 To get things running, clone the repository either with HTTPS or SSH; or download a zip file of the repository:
 ### HTTPS
