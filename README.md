@@ -8,14 +8,14 @@ This script uses `pdflatex`, `convert`, `xclip` and `feh`. Make sure that these 
 To get things running, clone the repository either with HTTPS or SSH; or download a zip file of the repository:
 ### HTTPS
 
-    ```bash
-    git clone https://github.com/nilsmo1/cmdlatex.git
-    ```
+```bash
+git clone https://github.com/nilsmo1/cmdlatex.git
+```
 ### SSH
 
-    ```bash
-    git clone git@github.com:nilsmo1/cmdlatex.git
-    ```
+```bash
+git clone git@github.com:nilsmo1/cmdlatex.git
+```
 From here, go to the newly downloaded or cloned instance of the repository and run the `INSTALL` script:
 ```
 cd cmdlatex
