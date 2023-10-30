@@ -2,7 +2,7 @@
 Convert LaTeX input into a png, which is copied to the clipboard.
 
 ## Requirements
-This script uses `pdflatex`, `convert`, `xclip` and `feh`. Make sure that these programs are already installed for the correct execution of the script.
+This script uses [`pdflatex`](https://wiki.archlinux.org/title/TeX_Live), [`convert`](https://wiki.archlinux.org/title/ImageMagick), [`xclip`](https://archlinux.org/packages/extra/x86_64/xclip/) and [`feh`](https://wiki.archlinux.org/title/feh). Make sure that these programs are already installed for the correct execution of the script.
 
 ## Getting started
 To get things running, clone the repository either with HTTPS or SSH; or download a zip file of the repository:
