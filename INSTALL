@@ -5,7 +5,7 @@ CONFIG_PATH=~/.config/cmdlatex/config.tex
 cp cmdlatex.sh ~/.local/bin/cmdlatex
 mkdir -p ~/.config/cmdlatex
 
-if ! test $CONFIG_PATH; then
+if test $CONFIG_PATH; then
     echo "\usepackage{amsmath}
     \usepackage{amsfonts}
     \usepackage{amssymb}
