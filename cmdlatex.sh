@@ -9,6 +9,7 @@ editor=$EDITOR
 expression=false
 display=true
 font="euler"
+color="white"
 config_path='~/.config/cmdlatex/config.tex'
 
 base='_latex_cmd_tmp_file_'
@@ -41,6 +42,7 @@ usage() {
     printf "  -E <editor>\tUse given editor.\n"
     printf "  -f <font>\tUse given font.\n"
     printf "  -c <path>\tUse custom path for preamble, instead of default $config_path.\n"
+    printf "  -C <color>\tUse custom text color, instead of default white.\n"
     printf "  -v\t\tShow the version of installed instance of $program.\n"
     printf "  -h\t\tPrints this help.\n"
     printf "  -q\t\tDo not show verbose output.\n"
@@ -49,12 +51,13 @@ usage() {
     printf "  -d\t\tDo not display the png after creation.\n"
 }
 
-while getopts ":e:E:f:c:vqkKdh" option; do
+while getopts ":e:E:f:c:C:vqkKdh" option; do
     case $option in
         e) input=$OPTARG; expression=true ;;
         E) editor=$OPTARG ;;
         f) font=$OPTARG ;;
         c) config_path=$OPTARG ;;
+        C) color=$OPTARG ;;
         v) echo "$program version $version"; exit 0 ;;
         q) verbose=false ;;
         k) keep_tex=true ;;
@@ -90,7 +93,7 @@ echo "\documentclass[border=2pt]{standalone}
 \input{$config_path}
 \begin{document}
 \begin{varwidth}{\linewidth}
-\textcolor{white}{$input}
+\textcolor{$color}{$input}
 \end{varwidth}
 \end{document}" > $tex_output
 
