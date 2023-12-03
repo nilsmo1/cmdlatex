@@ -86,10 +86,11 @@ fi
 
 echo "\documentclass[border=2pt]{standalone}
 \usepackage{$font}
+\usepackage{xcolor}
 \input{$config_path}
 \begin{document}
 \begin{varwidth}{\linewidth}
-$input
+\textcolor{white}{$input}
 \end{varwidth}
 \end{document}" > $tex_output
 
